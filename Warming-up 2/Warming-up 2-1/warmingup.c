@@ -7,7 +7,6 @@
 #define JOKER '@'
 #define MAX_TURNS 25
 
-// 함수 선언
 void print_game_board(int board[SIZE][SIZE], int revealed[SIZE][SIZE], int match_row1, int match_col1, int match_row2, int match_col2, int match);
 void suffle(int* array, int size);
 void reveal_positions(int board[SIZE][SIZE], int revealed[SIZE][SIZE], char pos1[], char pos2[]);
@@ -48,6 +47,10 @@ int main() {
 
 		if (check_game_over(revealed)) {
 			printf("게임 성공!\n");
+			Sleep(700);
+			printf("게임 점수: 100점\n");
+			printf("추가 점수: %d\n", (MAX_TURNS - turn + 1) * 3);
+			printf("총    점: %d\n", (MAX_TURNS - turn + 1) * 3 + 100);
 			break;
 		}
 

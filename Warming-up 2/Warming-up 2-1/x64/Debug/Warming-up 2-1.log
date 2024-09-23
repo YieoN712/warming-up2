@@ -1,5 +1,5 @@
 ﻿  warmingup.c
 C:\IEONCG\warming-up2\Warming-up 2\Warming-up 2-1\warmingup.c(25,8): warning C4244: '함수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\IEONCG\warming-up2\Warming-up 2\Warming-up 2-1\warmingup.c(33,3): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\IEONCG\warming-up2\Warming-up 2\Warming-up 2-1\warmingup.c(45,3): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\IEONCG\warming-up2\Warming-up 2\Warming-up 2-1\warmingup.c(34,3): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\IEONCG\warming-up2\Warming-up 2\Warming-up 2-1\warmingup.c(46,3): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   Warming-up 2-1.vcxproj -> C:\IEONCG\warming-up2\Warming-up 2\x64\Debug\Warming-up 2-1.exe
