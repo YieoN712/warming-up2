@@ -1,0 +1,5 @@
+﻿  warmingup.c
+C:\IEONCG\warming-up2\Warming-up 2\Warming-up 2-2\warmingup.c(107,2): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\IEONCG\warming-up2\Warming-up 2\Warming-up 2-2\warmingup.c(114,3): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\IEONCG\warming-up2\Warming-up 2\Warming-up 2-2\warmingup.c(151,4): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  Warming-up 2-2.vcxproj -> C:\IEONCG\warming-up2\Warming-up 2\x64\Debug\Warming-up 2-2.exe
