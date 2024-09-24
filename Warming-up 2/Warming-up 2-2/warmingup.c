@@ -56,14 +56,67 @@ void clear_rect(char board[BOARD_SIZE][BOARD_SIZE], int x1, int y1, int x2, int 
 		}
 	}
 }
+void draw_rect(char board[BOARD_SIZE][BOARD_SIZE], int x1, int y1, int x2, int y2) {
+	for (int i = y1; i <= y2; i++) {
+		for (int j = x1; j <= x2; j++) {
+			board[i][j] = '0';
+		}
+	}
+}
 // 1칸씩 움직임 도형 1
 void move_rect1(char board[BOARD_SIZE][BOARD_SIZE], int* x1, int* y1, int* x2, int* y2, int dx, int dy) {
-	clear_rect(board, *x1, *y1, *x2, *y2);
+	if (*x1 > *x2) {
+		for (int i = *y1; i <= *y2; i++) {
+			for (int j = *x1; j < BOARD_SIZE; j++) {
+				board[i][j] = '.';
+			}
+			for (int j = 0; j <= *x2; j++) {
+				board[i][j] = '.';
+			}
+		}
+	}
+	else if (*y1 > *y2) {
+		for (int j = *x1; j <= *x2; j++) {
+			for (int i = *y1; i < BOARD_SIZE; i++) {
+				board[i][j] = '.';
+			}
+			for (int i = 0; i <= *y2; i++) {
+				board[i][j] = '.';
+			}
+		}
+	}
+	else {
+		clear_rect(board, *x1, *y1, *x2, *y2);
+	}
 
 	*x1 = (*x1 + dx + BOARD_SIZE) % BOARD_SIZE;
 	*x2 = (*x2 + dx + BOARD_SIZE) % BOARD_SIZE;
 	*y1 = (*y1 + dy + BOARD_SIZE) % BOARD_SIZE;
 	*y2 = (*y2 + dy + BOARD_SIZE) % BOARD_SIZE;
+
+	if (*x1 > *x2) {
+		for (int i = *y1; i <= *y2; i++) {
+			for (int j = *x1; j < BOARD_SIZE; j++) {
+				board[i][j] = '0';
+			}
+			for (int j = 0; j <= *x2; j++) {
+				board[i][j] = '0';
+			}
+		}
+	}
+	else if (*y1 > *y2) {
+		for (int j = *x1; j <= *x2; j++) {
+			for (int i = *y1; i < BOARD_SIZE; i++) {
+				board[i][j] = '0';
+			}
+			for (int i = 0; i <= *y2; i++) {
+				board[i][j] = '0';
+			}
+		}
+	}
+	else {
+		draw_rect(board, *x1, *y1, *x2, *y2);
+	}
 }
 // 1칸씩 움직임 도형 2
 void move_rect2(char board[BOARD_SIZE][BOARD_SIZE], int* x1, int* y1, int* x2, int* y2, int dx, int dy) {
@@ -114,8 +167,9 @@ int main()
 
 	printf("도형1 좌표값 입력(x1 y1 x2 y2): ");
 	scanf("%d %d %d %d", &x1, &y1, &x2, &y2);
-	printf("도형2 좌표값 입력(x1 y1 x2 y2): ");
-	scanf("%d %d %d %d", &w1, &a1, &w2, &a2);
+	/*printf("도형2 좌표값 입력(x1 y1 x2 y2): ");
+	scanf("%d %d %d %d", &w1, &a1, &w2, &a2);*/
+	w1 = 29; w2 = 29; a1 = 29; a2 = 29;
 
 	check_and_draw(board, x1, y1, x2, y2, w1, a1, w2, a2);
 	print_board(board);
@@ -161,7 +215,7 @@ int main()
 			x2 = (x2 + 1 < BOARD_SIZE) ? x2 + 1 : x2;
 			y1 = (y1 - 1 >= 0) ? y1 - 1 : y1;
 			y2 = (y2 + 1 < BOARD_SIZE) ? y2 + 1 : y2;
-			check_and_draw(board, x1, y1, x2, y2, w1, a1, w2, a2);
+			check_and_draw(board, x1 + 1, y1 + 1, x2 + 1, y2 + 1, w1, a1, w2, a2);
 			break;
 
 		case 'w':
@@ -212,6 +266,7 @@ int main()
 
 		case 'r':
 			init_board(board);
+			system("cls");
 
 			printf("좌표값 입력(x1 y1 x2 y2): ");
 			scanf("%d %d %d %d", &x1, &y1, &x2, &y2);

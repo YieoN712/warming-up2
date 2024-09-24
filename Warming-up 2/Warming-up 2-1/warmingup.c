@@ -92,6 +92,14 @@ void reset_game(int board[SIZE][SIZE], int revealed[SIZE][SIZE]) {
 			revealed[i][j] = 0;
 		}
 	}
+	// È®ÀÎ¿ë
+	for (int i = 0; i < SIZE; i++) {
+		for (int j = 0; j < SIZE; j++) {
+			printf(" %c ", board[i][j]);
+		}
+		printf("\n");
+	}
+	printf("\n");
 }
 
 void print_game_board(int board[SIZE][SIZE], int revealed[SIZE][SIZE], int match_row1, int match_col1, int match_row2, int match_col2, int match) {
@@ -107,7 +115,7 @@ void print_game_board(int board[SIZE][SIZE], int revealed[SIZE][SIZE], int match
 			if (revealed[i][j]) {
 				if ((i == match_row1 && j == match_col1) || (i == match_row2 && j == match_col2)) {
 					if (match) {
-						set_color(9);
+						set_color(11);
 					}
 					else {
 						set_color(12);
